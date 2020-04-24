@@ -1,0 +1,26 @@
+﻿@model Asp.net_Core_Project.ViewModels.BarsViewModel
+
+@{
+    ViewData["Title"] = "Bars";
+}
+
+
+<p id="addBarBtn">
+    <h1>Bars</h1>
+    <a asp-action="Add" type="button" class="btn btn-info">Add Bar</a>
+</p>
+
+<div id="barsCard">
+    @foreach (var item in Model.Bars)
+    {
+        <div class="card" style="width: 70rem;">
+            <img src="@item.ImageUrl" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">@item.Name</h5>
+                <p class="card-text">@item.Address - @item.Town</p>
+                <a href="" class="btn btn-primary">Reserve Place/s</a>
+            </div>
+        </div>
+        <br>
+    }
+</div>
